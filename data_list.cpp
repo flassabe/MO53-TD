@@ -13,7 +13,7 @@ data_list::data_list() {
 data_list::data_list(const data_list &other) {
     _values = other._values;
 }
-
+/**/
 values_list::values_list(const values_list &other) {
     list_element *ptr = other._head;
     while (ptr) {
@@ -21,7 +21,7 @@ values_list::values_list(const values_list &other) {
         ptr = ptr->get_next();
     }
 }
-
+/*We copy a list L1 of value in another list L1 after it was empty L2*/
 values_list &values_list::operator=(const values_list &other) {
     clear();
     list_element *ptr = other._head;
@@ -122,7 +122,7 @@ void data_list::from_text(const std::string &source) {
         throw ios_base::failure("File cannot be opened for reading.");
     }
 }
-
+/*Read data from binary file*/
 void data_list::from_binary(const std::string &source) {
     _values.clear();
     ifstream f{source, std::ios::binary};
@@ -181,12 +181,14 @@ data_list data_list::moving_average(size_t window_width) {
     return result;
 }
 
+/*This function is used to sort the table according to a boolean to choose the order*/
 data_list data_list::sort_table(bool ascending) {
     data_list result{*this};
     result._values.sort_list(ascending);
     return result;
 }
 
+/*This function is used to get a liste of average value.*/
 data_list data_list::average() {
     data_list result;
     data_list sum_table = table_sum();
