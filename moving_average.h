@@ -1,9 +1,8 @@
 #ifndef MOVING_AVERAGE_H
 #define MOVING_AVERAGE_H
 
-
-class moving_average
-{
+#include <calculation.h>
+class moving_average : public calculation{
 public:
     moving_average();
 };

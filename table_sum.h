@@ -1,9 +1,8 @@
 #ifndef TABLE_SUM_H
 #define TABLE_SUM_H
 
-
-class table_sum
-{
+#include <calculation.h>
+class table_sum : public calculation{
 public:
     table_sum();
 };
