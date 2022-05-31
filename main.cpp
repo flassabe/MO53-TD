@@ -5,6 +5,7 @@
 using namespace std;
 
 int main() {
+    cout << "heho:" << endl;
     data_list t;
     t.from_binary("binary.bin");
     cout << "t:" << endl;
