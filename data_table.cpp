@@ -12,6 +12,7 @@ data_table::data_table() {
 
 void data_table::from_text(const std::string &source) {
     _table.clear();
+    cout << source << endl;
     ifstream f{source};
     if (f.is_open()) {
         array<char, 100> buffer;

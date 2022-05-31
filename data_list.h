@@ -4,17 +4,19 @@
 
 #include <vector>
 #include <string>
-
 class list_element {
+    /*la liste aura un pointeur sur un précédent et un suivant*/
     double _value;
     list_element *_prev;
     list_element *_next;
 
 public:
+    /*Constructor of list_element*/
     list_element(double v=0.0, list_element *p=nullptr, list_element *n=nullptr):
         _value(v), _prev(p), _next(n) {}
+    /*Destructor of list_element*/
     ~list_element() {}
-
+    /*return next element of list_element*/
     list_element *get_next() {return _next;}
     void set_next(list_element *n) {_next = n;}
     list_element *get_prev() {return _prev;}
@@ -30,11 +32,11 @@ class values_list {
 public:
     values_list(): _head(nullptr), _tail(nullptr) {}
     values_list(const values_list &other);
-    ~values_list() {clear_list();}
+    ~values_list() {clear();}
     values_list &operator=(const values_list &other);
 
-    void clear_list();
-    void add_value(double v); // Always add at the end
+    void clear();
+    void push_back(double v); // Always add at the end
     void pop_element(); // Remove last element
     size_t size()const;
     double get_value(size_t position)const;
@@ -47,7 +49,7 @@ class data_list {
 public:
     data_list();
     data_list(const data_list &other);
-    ~data_list() {_values.clear_list();}
+    ~data_list() {_values.clear();}
 
     // Input methods
     void from_text(const std::string &source);
