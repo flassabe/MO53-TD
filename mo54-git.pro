@@ -6,8 +6,10 @@ CONFIG -= qt
 SOURCES += \
         data_list.cpp \
         data_table.cpp \
-        main.cpp
+        main.cpp \
+        storage_type.cpp
 
 HEADERS += \
     data_list.h \
-    data_table.h
+    data_table.h \
+    storage_type.h
