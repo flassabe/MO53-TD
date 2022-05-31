@@ -6,10 +6,10 @@
 #include <algorithm>
 
 using namespace std;
-
+/*Constructor of data_list*/
 data_list::data_list() {
 }
-
+/*Constructor of data_list with parameter*/
 data_list::data_list(const data_list &other) {
     _values = other._values;
 }
@@ -32,6 +32,7 @@ values_list &values_list::operator=(const values_list &other) {
     return *this;
 }
 
+/*Function to erase the content of the values list*/
 void values_list::clear_list() {
     list_element *tmp = _head;
     while (tmp) {
@@ -42,6 +43,7 @@ void values_list::clear_list() {
     _head = _tail = nullptr;
 }
 
+/*Function to add a value to the values list*/
 void values_list::add_value(double v) {
     if (!_head) {
         _head = new list_element(v);
@@ -51,7 +53,7 @@ void values_list::add_value(double v) {
         _tail = _tail->get_next();
     }
 }
-
+/*Function to remove a value to the values list*/
 void values_list::pop_element() {
     if (_head) {
         list_element *tmp = _head->get_next();
@@ -64,7 +66,7 @@ void values_list::pop_element() {
         }
     }
 }
-
+/*Function to get the size of the values list*/
 size_t values_list::size() const {
     size_t s = 0;
     list_element *ptr = _head;
@@ -75,6 +77,7 @@ size_t values_list::size() const {
     return s;
 }
 
+/*Function to get a value from the values list at a position*/
 double values_list::get_value(size_t position) const {
     size_t pos = 0;
     list_element *ptr = _head;
@@ -86,7 +89,7 @@ double values_list::get_value(size_t position) const {
     }
     // Error case: position out of bounds
 }
-
+/*Function to sort a list of value*/
 void values_list::sort_list(bool ascending) { // Naive sort
     list_element *ptr = _head;
     while (ptr && ptr->get_next()) {
@@ -105,6 +108,7 @@ void values_list::sort_list(bool ascending) { // Naive sort
         ptr = ptr->get_next();
     }
 }
+
 
 void data_list::from_text(const std::string &source) {
     _values.clear_list();
@@ -153,6 +157,7 @@ void data_list::to_binary(const std::string &destination) {
     }
 }
 
+/*Function to print the data of a values list*/
 void data_list::print_data() const {
     for (size_t i=0; i<_values.size(); ++i) {
         cout << _values.get_value(i) << endl;
