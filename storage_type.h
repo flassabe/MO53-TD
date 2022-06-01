@@ -5,8 +5,6 @@
 class storage_type
 {
 public:
-    storage_type();
-    ~storage_type(){};
 
     //Useful getters to have a clear view of the storage
     double get_next();
