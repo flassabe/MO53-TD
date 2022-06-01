@@ -1,7 +1,7 @@
 #ifndef STORAGE_TYPE_H
 #define STORAGE_TYPE_H
 
-
+template <typename T>
 class storage_type
 {
 public:
@@ -10,7 +10,7 @@ public:
     virtual storage_type* get_next();
     virtual storage_type* get_previous();
     virtual int get_size();
-    virtual double get_elem();
+    virtual T get_elem();
 
     //Watcher on the element
     virtual bool is_next();
