@@ -7,17 +7,18 @@ class storage_type
 public:
 
     //Useful getters to have a clear view of the storage
-    double get_next();
-    double get_previous();
-    int get_size();
+    virtual storage_type* get_next();
+    virtual storage_type* get_previous();
+    virtual int get_size();
+    virtual double get_elem();
 
     //Watcher on the element
-    bool is_next();
-    bool is_previous();
+    virtual bool is_next();
+    virtual bool is_previous();
 
-    void add_value(double value, int position); //Function that add a value at the spécified position
-    void remove_value(double value); //Remove the value specified from the storage
-    void remove_value_at(int position); //Remove the value at the specified position
+    virtual void add_value(double value, int position); //Function that add a value at the spécified position
+    virtual void remove_value(double value); //Remove the value specified from the storage
+    virtual void remove_value_at(int position); //Remove the value at the specified position
 };
 
 #endif // STORAGE_TYPE_H
