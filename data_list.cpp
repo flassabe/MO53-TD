@@ -91,7 +91,8 @@ double values_list::get_value(size_t position) const {
 }
 
 /*Function to sort a list of value*/
-void values_list::sort_list(bool ascending) { // Naive sort
+void values_list::sort_list(bool ascending) { 
+    // Bubble sort
     list_element *ptr;
     int n = this->size();
     double tmp;
