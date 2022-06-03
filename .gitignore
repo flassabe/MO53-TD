@@ -71,4 +71,7 @@ Thumbs.db
 # --------
 *.dll
 *.exe
+binary.bin
+mo53
 
+texte.txt
