@@ -89,23 +89,20 @@ double values_list::get_value(size_t position) const {
     }
     throw ("ERROR : Out of bounds of the list"); // Error case: position out of bounds
 }
+
 /*Function to sort a list of value*/
 void values_list::sort_list(bool ascending) { // Naive sort
-    list_element *ptr = _head;
-    while (ptr && ptr->get_next()) {
-        list_element *min_element = ptr;
-        list_element *cursor = ptr;
-        while (cursor) {
-            if (ascending && cursor->get_value() < min_element->get_value())
-                min_element = cursor;
-            else if (!ascending && cursor->get_value() > min_element->get_value())
-                min_element = cursor;
-            cursor = cursor->get_next();
+    list_element *ptr;
+    int n = this->size();
+    for (int i=0; i<n-1; ++i) {
+        ptr = _head;
+        for (int j=0; j<n-i-1; ++j) {
+            if((ptr->get_value() > ptr->get_next()->get_value() && ascending)||(ptr->get_value() < ptr->get_next()->get_value() && !ascending)) {
+                    double tmp = ptr->get_value();
+                    ptr->set_value(ptr->get_next()->get_value());
+                    ptr->get_next()->set_value(tmp);
+            }
         }
-        double tmp = ptr->get_value();
-        ptr->set_value(min_element->get_value());
-        min_element->set_value(tmp);
-        ptr = ptr->get_next();
     }
 }
 
