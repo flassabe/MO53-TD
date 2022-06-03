@@ -64,6 +64,18 @@ public:
     data_list average(); // returns a data_table with only one value
     data_list table_sum(); // returns a data_table with only one value
     data_list table_count(); // returns a data_table with only one value
+
+    struct data_list_iterator {
+        list_element *current_value;
+
+    public:
+        data_list_iterator();
+        ~data_list_iterator();
+        
+        data_list_iterator begin();
+        data_list_iterator end();
+        data_list_iterator& operator++();
+    };
 };
 
 #endif // DATA_LIST_H

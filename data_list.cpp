@@ -204,3 +204,23 @@ data_list data_list::table_count() {
     result._values.push_back(static_cast<double>(_values.size()));
     return result;
 }
+
+/*
+data_list::data_list_iterator::data_list_iterator() {
+    current_value = begin();
+}
+
+list_element * data_list::begin() { 
+    return _values._head; 
+}
+
+list_element * data_list_iterator::end()   { 
+    return data_list_iterator(&iterate_values._tail); 
+}
+
+data_list_iterator& data_list_iterator::operator++() { 
+    if(current_value.get_next() != nullptr){
+        current_value = current_value.get_next();
+    }
+}
+*/

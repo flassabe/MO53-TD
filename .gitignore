@@ -72,3 +72,8 @@ Thumbs.db
 *.dll
 *.exe
 
+# make generated file
+binary.bin
+data_list.o
+data_table.o
+mo53
