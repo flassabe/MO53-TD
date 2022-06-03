@@ -94,14 +94,16 @@ double values_list::get_value(size_t position) const {
 void values_list::sort_list(bool ascending) { // Naive sort
     list_element *ptr;
     int n = this->size();
+    double tmp;
     for (int i=0; i<n-1; ++i) {
         ptr = _head;
         for (int j=0; j<n-i-1; ++j) {
             if((ptr->get_value() > ptr->get_next()->get_value() && ascending)||(ptr->get_value() < ptr->get_next()->get_value() && !ascending)) {
-                    double tmp = ptr->get_value();
+                    tmp = ptr->get_value();
                     ptr->set_value(ptr->get_next()->get_value());
                     ptr->get_next()->set_value(tmp);
             }
+            ptr = ptr->get_next();
         }
     }
 }
