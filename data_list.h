@@ -44,7 +44,7 @@ class list_element {
      * 
      */
     list_element *_next;
-    
+
 public:
     /**
      * @brief Construct a new list element
@@ -107,22 +107,94 @@ public:
     void set_value(double v) {_value = v;}
 };
 
+/**
+ * @class values_list 
+ * @brief Provide all services to manage a chained list of list_element
+ * 
+ */
 class values_list {
+    /**
+     * @brief the first current element of the list
+     * 
+     */
     list_element *_head;
+
+    /**
+     * @brief the last current element of the list
+     * 
+     */
     list_element *_tail;
 
 public:
+    /**
+     * @brief Construct a new values list object
+     * 
+     */
     values_list(): _head(nullptr), _tail(nullptr) {}
+
+    /**
+     * @brief Copy construct of values list
+     * 
+     * @param other the list that will be copied
+     */
     values_list(const values_list &other);
+
+    /**
+     * @brief Destroy the values list object
+     * 
+     */
     ~values_list() {clear();}
+
+    /**
+     * @brief Overload assignment operator : the current list will
+     * replace its elements by new elements with same values as the list passed in parameter.
+     * 
+     * @param other the reference list
+     * @return values_list& the current list
+     */
     values_list &operator=(const values_list &other);
 
+    /**
+     * @brief Remove all elements from the list
+     * 
+     */
     void clear();
-    void push_back(double v); // Always add at the end
-    void pop_element(); // Remove last element
+
+    /**
+     * @brief Add new element at the end of the list with the value passed in parameter
+     * 
+     * @param v the value of the new element
+     */
+    void push_back(double v);
+
+    /**
+     * @brief Remove the head of the list
+     * 
+     */
+    void pop_element();
+
+    /**
+     * @brief Get current list size
+     * 
+     * @return size_t 
+     */
     size_t size()const;
+
+    /**
+     * @brief Get the double value at position
+     * 
+     * @param position 
+     * @return double 
+     */
     double get_value(size_t position)const;
 
+    /**
+     * @brief Sort the list depending on the parameter value.
+     * If parameter is <code>true</code> : ascending
+     * If parameter is <code>false</code> : descending
+     * 
+     * @param ascending the sort direction
+     */
     void sort_list(bool ascending);
 };
 
