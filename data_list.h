@@ -40,6 +40,20 @@ public:
     double get_value(size_t position)const;
 
     void sort_list(bool ascending);
+
+    class data_list_iterator {
+        list_element *element;
+
+    public:
+        data_list_iterator(list_element *element);
+        ~data_list_iterator();
+        
+        data_list_iterator& operator++();
+        bool operator!=(data_list_iterator& itr);
+    };
+
+    data_list_iterator begin();
+    data_list_iterator end();
 };
 
 class data_list {
@@ -63,19 +77,7 @@ public:
     data_list sort_table(bool ascending=true);
     data_list average(); // returns a data_table with only one value
     data_list table_sum(); // returns a data_table with only one value
-    data_list table_count(); // returns a data_table with only one value
-
-    struct data_list_iterator {
-        list_element *current_value;
-
-    public:
-        data_list_iterator();
-        ~data_list_iterator();
-        
-        data_list_iterator begin();
-        data_list_iterator end();
-        data_list_iterator& operator++();
-    };
+    data_list table_count(); // returns a data_table with only one value*
 };
 
 #endif // DATA_LIST_H

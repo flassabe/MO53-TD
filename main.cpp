@@ -10,7 +10,8 @@ int main() {
     cout << "t:" << endl;
     t.print_data();
     //auto t2 = t.sort_table(false);
-    auto t2 = t.moving_average(2);
+    //auto t2 = t.moving_average(2);
+    auto t2 = t.table_sum();
     cout << "t2:" << endl;
     t2.print_data();
     return 0;
