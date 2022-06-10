@@ -199,7 +199,7 @@ public:
 };
 
 /**
- * @brief Provide operation and calculation for entries data
+ * @brief Provide operations and calculations for entries data based on values_list
  * 
  */
 class data_list {
