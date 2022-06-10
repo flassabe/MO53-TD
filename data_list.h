@@ -198,28 +198,113 @@ public:
     void sort_list(bool ascending);
 };
 
+/**
+ * @brief Provide operation and calculation for entries data
+ * 
+ */
 class data_list {
+    /**
+     * @brief values list in which the data will be stored
+     * 
+     */
     values_list _values;
 public:
+    /**
+     * @brief Construct a new data list object
+     * 
+     */
     data_list();
+    
+    /**
+     * @brief Copy construct of data list
+     * 
+     * @param other the data list that will be copied
+     */
     data_list(const data_list &other);
+    
+    /**
+     * @brief Destroy the data list object
+     * 
+     */
     ~data_list() {_values.clear();}
 
     // Input methods
+    /**
+     * @brief Replace current data by text file values
+     * 
+     * @param source text file name
+     */
     void from_text(const std::string &source);
+    
+    /**
+     * @brief Replace current data by binary file values
+     * 
+     * @param source binary file name
+     */
     void from_binary(const std::string &source);
 
     // Output methods
+    /**
+     * @brief Write all the data into given text file
+     * 
+     * @param destination text file name
+     */
     void to_text(const std::string &destination);
+    
+    /**
+     * @brief Write all the data into given binary file
+     * 
+     * @param destination text file name
+     */
     void to_binary(const std::string &destination);
+    
+    /**
+     * @brief Display data of the list into the standard output
+     * 
+     */
     void print_data()const;
 
     // Computation (return new instances of data_table)
+    /**
+     * @brief Calculate a series of averages of different subsets of the full data set. The size of these subsets
+     * are defined by the parameter. Each time a calculation is done, the oldest data of the current substet will 
+     * be remplace by the next value in the set.
+     * 
+     * @param window_width the size of data substets
+     * @return data_list new data list with all calculated averages
+     */
     data_list moving_average(size_t window_width);
+    
+    /**
+     * @brief Sort the data depending on the parameter value.
+     * If parameter is <code>true</code> : ascending
+     * If parameter is <code>false</code> : descending
+     * 
+     * @param ascending the sort direction
+     * @return data_list new sorted data list
+     */
     data_list sort_table(bool ascending=true);
-    data_list average(); // returns a data_table with only one value
-    data_list table_sum(); // returns a data_table with only one value
-    data_list table_count(); // returns a data_table with only one value
+    
+    /**
+     * @brief Calculate the average of all data
+     * 
+     * @return data_list with only one value : the calculation result
+     */
+    data_list average();
+    
+    /**
+     * @brief Calculate the sum of all data
+     * 
+     * @return data_list with only one value : the calculation result
+     */
+    data_list table_sum();
+    
+    /**
+     * @brief Count the number of data
+     * 
+     * @return data_list with only one value : the count result
+     */
+    data_list table_count();
 };
 
 #endif // DATA_LIST_H
