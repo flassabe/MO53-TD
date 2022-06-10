@@ -280,7 +280,7 @@ public:
      * If parameter is <code>true</code> : ascending
      * If parameter is <code>false</code> : descending
      * 
-     * @param ascending the sort direction
+     * @param ascending the sort direction, default ascending
      * @return data_list new sorted data list
      */
     data_list sort_table(bool ascending=true);
