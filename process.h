@@ -2,6 +2,9 @@
 #define PROCESS_H
 
 #include "storage_type.h"
+#include "loader.h"
+#include "calculation.h"
+#include "writer.h"
 
 class process { // raw pointers may be improved
     storage_type *_storage;

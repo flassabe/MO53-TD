@@ -15,3 +15,15 @@ int main() {
     t2.print_data();
     return 0;
 }
+
+/*int main() {
+    resource_manager mgr{};
+    // Next line can be parameterized
+    process p{mgr.make_storage(LIST),
+              mgr.make_reader(BIN),
+              mgr.make_calculation(AVG),
+              mgr.make_writer(TEXT)};
+    p.execute();
+    mgr.clear_resources();
+    return 0;
+}*/
