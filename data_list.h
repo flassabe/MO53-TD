@@ -2,6 +2,10 @@
 #define DATA_LIST_H
 
 
+#include <iostream>
+using namespace std;
+
+
 #include <vector>
 #include <string>
 class list_element {
@@ -66,6 +70,15 @@ public:
     data_list average(); // returns a data_table with only one value
     data_list table_sum(); // returns a data_table with only one value
     data_list table_count(); // returns a data_table with only one value
+
+    values_list get_values() {
+        return _values;
+    };
+
+    values_list* get_values_all() {
+        return &_values;
+    };
+
 };
 
 #endif // DATA_LIST_H

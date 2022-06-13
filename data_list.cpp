@@ -4,6 +4,7 @@
 #include <array>
 #include <iostream>
 #include <algorithm>
+#include "moving_average.h"
 
 using namespace std;
 /*Constructor of data_list*/
@@ -163,8 +164,9 @@ void data_list::print_data() const {
         cout << _values.get_value(i) << endl;
     }
 }
-
+/*
 data_list data_list::moving_average(size_t window_width) {
+
     data_list result;
     if (window_width < _values.size()) {
         double current_sum = 0.0;
@@ -181,14 +183,14 @@ data_list data_list::moving_average(size_t window_width) {
     return result;
 }
 
-/*This function is used to sort the table according to a boolean to choose the order*/
+//This function is used to sort the table according to a boolean to choose the order
 data_list data_list::sort_table(bool ascending) {
     data_list result{*this};
     result._values.sort_list(ascending);
     return result;
 }
 
-/*This function is used to get a liste of average value.*/
+//This function is used to get a liste of average value.
 data_list data_list::average() {
     data_list result;
     data_list sum_table = table_sum();
@@ -205,7 +207,7 @@ data_list data_list::table_sum() {
     result._values.push_back(current_sum);
     return result;
 }
-
+*/
 data_list data_list::table_count() {
     data_list result;
     result._values.push_back(static_cast<double>(_values.size()));

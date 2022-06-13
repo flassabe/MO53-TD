@@ -64,6 +64,7 @@ void data_table::print_data() const {
 }
 
 data_table data_table::moving_average(size_t window_width) {
+    //moving_average_function();
     data_table result;
     if (window_width < _table.size()) {
         double current_sum = 0.0;
