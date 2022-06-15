@@ -189,17 +189,15 @@ data_list data_list::average() {
     return result;
 }
 
+#include <iostream>
+using namespace std;
+
 data_list data_list::table_sum() {
     data_list result;
     double current_sum = 0.0;
-    for(auto it = result._values.begin();  it != result._values.end(); it++ ){
-        current_sum += it.element->get_value();
+    for(values_list::data_list_iterator it = _values.begin(); it != _values.end(); ++it ){
+        current_sum += it.getElement()->get_value();
     }
-    /*
-    for (size_t i=0; i<_values.size(); ++i) {
-        
-    }
-    */
     result._values.push_back(current_sum);
     return result;
 }
@@ -215,7 +213,7 @@ values_list::data_list_iterator values_list::begin() {
 }
 
 values_list::data_list_iterator values_list::end() {
-    return data_list_iterator(this->_tail); 
+    return data_list_iterator(this->_tail->get_next()); 
 }
 
 values_list::data_list_iterator::data_list_iterator(list_element *element) {
@@ -223,10 +221,14 @@ values_list::data_list_iterator::data_list_iterator(list_element *element) {
 }
 
 values_list::data_list_iterator& values_list::data_list_iterator::operator++() {
-    this->element = this->element->get_next();
+    if(this->element != nullptr){
+        this->element = this->element->get_next();
+    }
     return *this;
 }
 
-bool values_list::data_list_iterator::operator!=(data_list_iterator& itr) {
-    return (this->element == itr->element);
+values_list::data_list_iterator& values_list::data_list_iterator::operator++(int value) {
+    data_list_iterator it = *this;
+    ++(*this);
+    return it;
 }

@@ -41,15 +41,16 @@ public:
 
     void sort_list(bool ascending);
 
-    class data_list_iterator {
-        list_element *element;
+    struct data_list_iterator {
+        private:
+            list_element *element;
 
-    public:
-        data_list_iterator(list_element *element);
-        ~data_list_iterator();
-        
-        data_list_iterator& operator++();
-        bool operator!=(data_list_iterator& itr);
+        public:
+            data_list_iterator(list_element *element);
+            list_element* getElement(){return this->element;};
+            data_list_iterator& operator++();
+            data_list_iterator& operator++(int);
+            friend bool operator!=(const data_list_iterator& itr1,const data_list_iterator& itr2){return (itr1.element != itr2.element);};
     };
 
     data_list_iterator begin();
