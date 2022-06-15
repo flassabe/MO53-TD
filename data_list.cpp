@@ -189,9 +189,6 @@ data_list data_list::average() {
     return result;
 }
 
-#include <iostream>
-using namespace std;
-
 data_list data_list::table_sum() {
     data_list result;
     double current_sum = 0.0;
