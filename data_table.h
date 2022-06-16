@@ -26,6 +26,11 @@ public:
     data_table average(); // returns a data_table with only one value
     data_table table_sum(); // returns a data_table with only one value
     data_table table_count(); // returns a data_table with only one value
+
+
+    std::vector<double> get_values_table() {
+        return _table;
+    };
 };
 
 #endif // DATA_TABLE_H
