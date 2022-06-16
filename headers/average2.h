@@ -1,3 +1,4 @@
+/*Created by Catherine*/
 #ifndef AVERAGE2_H
 #define AVERAGE2_H
 #include <calculation.h>
