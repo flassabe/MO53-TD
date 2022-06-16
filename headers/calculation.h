@@ -1,3 +1,4 @@
+/*Created by Catherine*/
 #ifndef CALCULATION_H
 #define CALCULATION_H
 #include <iostream>
