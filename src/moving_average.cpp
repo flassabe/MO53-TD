@@ -1,3 +1,4 @@
+/*Created by Catherine*/
 /*#include "moving_average.h"
 template <typename T>
 moving_average<T>::moving_average(){
