@@ -30,6 +30,10 @@ int main() {
     auto averave_of_t2 = avg.do_average(&D);
     cout << "Average of D:" << endl;
     cout << averave_of_t2<< endl;
+    sort_table sort_my_data;
+    data_table d_sorted;
+    d_sorted = sort_my_data.do_sort_table(true,&D);
+    d_sorted.print_data();
     return 0;
 }
 

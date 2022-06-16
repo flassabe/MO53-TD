@@ -21,13 +21,6 @@ public:
         return result;
     }
     virtual double do_average(data_table * dtable){
-//        data_table result;
-
-//        table_sum2 sum_table = table_sum2();
-//        data_table sum = sum_table.do_sum2(dtable);
-//        cout << "oh no oh no oh nonononono:" << endl;
-//        result.get_values_table().push_back(sum.get_values_table()[0] / dtable->get_values_table().size());
-//        return result;
 
         data_table result;
         table_sum sum_table = table_sum();

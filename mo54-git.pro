@@ -13,9 +13,10 @@ SOURCES += \
         table_sum.cpp
 
 HEADERS += \
+    DataList_copy.h \
     average2.h \
     calculation.h \
-    data_list.h \
+    datalist.h \
     data_table.h \
     moving_average.h \
     sort_table.h \
