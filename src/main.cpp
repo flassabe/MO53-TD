@@ -1,3 +1,4 @@
+/*Created by Catherine*/
 #include <iostream>
 #include "data_list.h"
 #include "moving_average.h"
