@@ -1,19 +1,7 @@
-/*#include "table_count.h"
+#include "table_count.h"
 #include "data_list.h"
-template <typename T>
-table_count<T>::table_count(){
-}
-template <typename T>
-table_count<T>::~table_count(){
-}
-
-
-//This function is used to do the table count.
-
-template <typename T>
-T table_count<T>:: do_table_count(T *dlist){
-    T result;
+data_list table_count::do_table_count(data_list* dlist){
+    data_list result;
     result.get_values_all()->push_back(static_cast<double>(dlist->get_values_all()->size()));
     return result;
-}
-*/
+};

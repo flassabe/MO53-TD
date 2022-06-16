@@ -20,5 +20,4 @@ HEADERS += \
     moving_average.h \
     sort_table.h \
     table_count.h \
-    table_sum.h \
-    table_sum2.h
+    table_sum.h

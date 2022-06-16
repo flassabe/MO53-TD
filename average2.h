@@ -2,7 +2,7 @@
 #define AVERAGE2_H
 #include <calculation.h>
 #include <data_list.h>
-#include <table_sum2.h>
+#include <table_sum.h>
 #include <data_table.h>
 
 using namespace std;
@@ -14,7 +14,7 @@ public:
     //virtual data_table do_average(data_table);
     virtual data_list do_average(data_list* dlist){
         data_list result;
-        table_sum2 table = table_sum2();
+        table_sum table = table_sum();
         data_list sum_table = table.do_sum2(dlist);
         values_list temp = dlist->get_values();
         result.get_values_all()->push_back(sum_table.get_values_all()->get_value(0)/temp.size());
@@ -30,7 +30,7 @@ public:
 //        return result;
 
         data_table result;
-        table_sum2 sum_table = table_sum2();
+        table_sum sum_table = table_sum();
         double sum = sum_table.do_sum2(dtable);
         cout << "oh no oh no oh nonononono:" << endl;
         sum = sum / dtable->get_values_table().size();
